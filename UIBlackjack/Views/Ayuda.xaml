@@ -1,0 +1,29 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="UIBlackjack.Views.Ayuda"
+             Title="Ayuda">
+    <Grid>
+        <Image Source="fondo2.png"
+               Aspect="AspectFill"
+               Grid.RowSpan="3"
+               Grid.ColumnSpan="2"/>
+
+        <Grid VerticalOptions="Center" HorizontalOptions="Center">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="0"/>
+                <RowDefinition Height="1"/>
+                <RowDefinition Height="100"/>
+            </Grid.RowDefinitions>
+            <Image Source="bn2.png" WidthRequest="600" HeightRequest="600" Grid.Row="1"/>
+            <Image Source="bn1.png" WidthRequest="600" HeightRequest="600" Grid.Row="2"/>
+            <Button Text="Volver" 
+                    BackgroundColor="#240a0a" 
+                    TextColor="White" 
+                    FontAttributes="Bold" 
+                    Margin="0,10,0,-525"
+                    Grid.Row="3"
+                    WidthRequest="200"
+                    HeightRequest="60"/>
+        </Grid>
+    </Grid>
+</ContentPage>

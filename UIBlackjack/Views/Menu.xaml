@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="UIBlackjack.Views.Menu"
+             Title="Menu">
+    <Grid>
+        <Image Source="fondo.png"
+               Aspect="AspectFill"
+               Grid.RowSpan="3"
+               Grid.ColumnSpan="2"/>
+
+        <StackLayout VerticalOptions="Center" HorizontalOptions="Center">
+            <Label AnchorY="50"/>
+
+            <Grid RowSpacing="20" ColumnSpacing="20">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+                <Label AnchorY="100"/>
+                <Button Text="Informacion" Grid.Row="0" Grid.Column="0" WidthRequest="150" HeightRequest="60" BackgroundColor="#240a0a" TextColor="White" FontAttributes="Bold" />
+                <Button Text="Seguridad" Grid.Row="0" Grid.Column="1" WidthRequest="150" HeightRequest="60" BackgroundColor="#240a0a" TextColor="White" FontAttributes="Bold"  />
+                <Button Text="Tarjeta" Grid.Row="2" Grid.Column="0" WidthRequest="150" HeightRequest="60" BackgroundColor="#240a0a" TextColor="White" FontAttributes="Bold" />
+                <Button Text="Ubicacion" Grid.Row="2" Grid.Column="1" WidthRequest="150" HeightRequest="60" BackgroundColor="#240a0a" TextColor="White" FontAttributes="Bold" />
+            </Grid>
+            <Label AnchorY="1"/>
+            <Button Text="Ayuda" Grid.Row="1" Grid.Column="1" BackgroundColor="#240a0a" TextColor="White" FontAttributes="Bold"/>
+ 
+        </StackLayout>
+    </Grid>
+</ContentPage>
+    
+    
