@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="UIBlackjack.Views.AgregarTarjeta"
+             Title="Info">
+    <Grid>
+        <Image Source="fondo3.png"
+               Aspect="AspectFill"
+               Grid.RowSpan="3"
+               Grid.ColumnSpan="2"/>
+
+        <StackLayout VerticalOptions="Center" HorizontalOptions="Center" Spacing="20">
+            <Label AnchorY="50"/>
+            <Label AnchorY="1"/>
+
+            <Label Text="Numero" TextColor="#f17070"/>
+            <Entry Placeholder="1234 5678 9102 3456" WidthRequest="300" BackgroundColor="#240a0a"/>
+            <Label Text="Fecha" TextColor="#f17070"/>
+            <Entry Placeholder="11/27" WidthRequest="300" BackgroundColor="#240a0a"/>
+            <Label Text="Num. CVV" TextColor="#f17070"/>
+            <Entry Placeholder="210" WidthRequest="300" BackgroundColor="#240a0a"/>
+
+
+            <Button Text="Guardar" 
+                    BackgroundColor="#240a0a" 
+                    TextColor="White" 
+                    FontAttributes="Bold"
+                    WidthRequest="200"
+                    HeightRequest="60"/>
+
+            <Button Text="Volver" 
+                    BackgroundColor="#240a0a" 
+                    TextColor="White" 
+                    FontAttributes="Bold"
+                    WidthRequest="200"
+                    HeightRequest="60"/>
+        </StackLayout>
+    </Grid>
+</ContentPage>
