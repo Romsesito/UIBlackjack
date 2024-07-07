@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="UIBlackjack.Views.Info"
+             Title="Info">
+    <Grid>
+        <Image Source="fondo3.png"
+               Aspect="AspectFill"
+               Grid.RowSpan="3"
+               Grid.ColumnSpan="2"/>
+
+        <StackLayout VerticalOptions="Center" HorizontalOptions="Center" Spacing="20">
+            <Label AnchorY="50"/>
+            <Label AnchorY="1"/>
+
+            <Label Text="Nombres" TextColor="#f17070"/>
+            <Entry Placeholder="Juan Carlos" WidthRequest="300" BackgroundColor="#240a0a"/>
+            <Label Text="Apellidos" TextColor="#f17070"/>
+            <Entry Placeholder="Aguiar Mora" WidthRequest="300" BackgroundColor="#240a0a"/>
+            <Label Text="Num. Telefono" TextColor="#f17070"/>
+            <Entry Placeholder="098582129" WidthRequest="300" BackgroundColor="#240a0a"/>
+            
+
+            <Button Text="Guardar" 
+                    BackgroundColor="#240a0a" 
+                    TextColor="White" 
+                    FontAttributes="Bold"
+                    WidthRequest="200"
+                    HeightRequest="60"/>
+
+            <Button Text="Volver" 
+                    BackgroundColor="#240a0a" 
+                    TextColor="White" 
+                    FontAttributes="Bold"
+                    WidthRequest="200"
+                    HeightRequest="60"/>
+        </StackLayout>
+    </Grid>
+</ContentPage>
