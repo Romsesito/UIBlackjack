@@ -8,6 +8,6 @@
     Title="UIBlackjack">
 
     <ShellContent Title="Menu"
-                  ContentTemplate="{DataTemplate local:Views.Ayuda}" />
+                  ContentTemplate="{DataTemplate local:Views.Ubi}" />
 
 </Shell>

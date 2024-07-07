@@ -62,6 +62,7 @@
 	  <None Remove="Resources\Images\fondo.png" />
 	  <None Remove="Resources\Images\fondo2.png" />
 	  <None Remove="Resources\Images\sucurs.png" />
+	  <None Remove="Resources\Images\ubi.png" />
 	</ItemGroup>
 
 	<ItemGroup>
@@ -85,6 +86,9 @@
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Views\Menu.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\Ubi.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	</ItemGroup>
