@@ -12,6 +12,9 @@ namespace UIBlackjack.ViewModels
         public ICommand NavigateToTarjetaCommand { get; }
         public ICommand NavigateToUbicacionCommand { get; }
         public ICommand NavigateToAyudaCommand { get; }
+        public ICommand NavigateToMenuCommand { get; }
+        public ICommand NavigateToMisDatosCommand { get; }
+        public ICommand NavigateToInfoCCommand { get; }
 
         public MenuViewModel()
         {
@@ -20,6 +23,9 @@ namespace UIBlackjack.ViewModels
             NavigateToTarjetaCommand = new Command(async () => await NavigateToPage("TarjetaPage"));
             NavigateToUbicacionCommand = new Command(async () => await NavigateToPage("UbicacionPage"));
             NavigateToAyudaCommand = new Command(async () => await NavigateToPage("AyudaPage"));
+            NavigateToMisDatosCommand = new Command(async () => await NavigateToPage("MisDatosInfo"));
+            NavigateToMenuCommand = new Command(async () => await NavigateToPage("Menu"));
+            NavigateToInfoCCommand = new Command(async () => await NavigateToPage("Info"));
         }
 
         private async Task NavigateToPage(string pageName)
@@ -28,7 +34,7 @@ namespace UIBlackjack.ViewModels
             switch (pageName)
             {
                 case "InfoPage":
-                    await navigation.PushAsync(new Views.Info());
+                    await navigation.PushAsync(new Views.InfoMenu());
                     break;
                 case "SeguridadPage":
                     await navigation.PushAsync(new Views.Seguridad());
@@ -41,6 +47,15 @@ namespace UIBlackjack.ViewModels
                     break;
                 case "UbicacionPage":
                     await navigation.PushAsync(new Views.Ubi());
+                    break;
+                case "MisDatosInfo":
+                    await navigation.PushAsync(new Views.MisDatosInfo());
+                    break;
+                case "Menu":
+                    await navigation.PushAsync(new Views.Menu());
+                    break;
+                case "Info":
+                    await navigation.PushAsync(new Views.Info());
                     break;
             }
         }

@@ -54,6 +54,9 @@ namespace UIBlackjack.ViewModels
 
         private async Task SaveData()
         {
+            // Verificar los datos antes de guardar
+            System.Diagnostics.Debug.WriteLine($"Guardando datos: Name={UserData.Name}, LastName={UserData.LastName}, fono={UserData.fono}");
+
             // Guardar los datos en SQLite
             await App.Database.SaveUserDataAsync(UserData);
 
@@ -74,6 +77,12 @@ namespace UIBlackjack.ViewModels
             foreach (var user in userList)
             {
                 UserList.Add(user);
+            }
+
+            // Asumiendo que deseas mostrar el primer usuario en la lista
+            if (UserList.Count > 0)
+            {
+                UserData = UserList[0];
             }
         }
     }
