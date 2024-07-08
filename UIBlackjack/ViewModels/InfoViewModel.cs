@@ -1,4 +1,4 @@
-﻿// ViewModels/InfoViewModel.cs
+﻿
 using System.Collections.ObjectModel;
 using System.Windows.Input;
 using Microsoft.Maui.Controls;
@@ -11,6 +11,8 @@ namespace UIBlackjack.ViewModels
     {
         private UserData _userData;
         private ObservableCollection<UserData> _userList;
+        private Tarjeta _tarjetaData;
+        private ObservableCollection<Tarjeta> _tarjetaList;
 
         public UserData UserData
         {
@@ -32,6 +34,26 @@ namespace UIBlackjack.ViewModels
             }
         }
 
+        public Tarjeta TarjetaData
+        {
+            get => _tarjetaData;
+            set
+            {
+                _tarjetaData = value;
+                OnPropertyChanged();
+            }
+        }
+
+        public ObservableCollection<Tarjeta> TarjetaList
+        {
+            get => _tarjetaList;
+            set
+            {
+                _tarjetaList = value;
+                OnPropertyChanged();
+            }
+        }
+
         public ICommand SaveCommand { get; }
         public ICommand NavigateToPageCommand { get; }
 
@@ -39,6 +61,8 @@ namespace UIBlackjack.ViewModels
         {
             UserData = new UserData();
             UserList = new ObservableCollection<UserData>();
+            TarjetaData = new Tarjeta();
+            TarjetaList = new ObservableCollection<Tarjeta>();
 
             SaveCommand = new Command(async () => await SaveData());
             NavigateToPageCommand = new Command(async () => await NavigateToPage("Menu"));
@@ -54,19 +78,21 @@ namespace UIBlackjack.ViewModels
 
         private async Task SaveData()
         {
-            // Verificar los datos antes de guardar
+    
             System.Diagnostics.Debug.WriteLine($"Guardando datos: Name={UserData.Name}, LastName={UserData.LastName}, fono={UserData.fono}");
+            System.Diagnostics.Debug.WriteLine($"Guardando tarjeta: Numero={TarjetaData.NumTarjeta}, Expiracion={TarjetaData.FechaEXP}, CVV={TarjetaData.CVV}");
 
-            // Guardar los datos en SQLite
+   
             await App.Database.SaveUserDataAsync(UserData);
+            await App.Database.SaveTarjetaDataAsync(TarjetaData);
 
-            // Recargar la lista de usuarios
+       
             LoadData();
 
-            // Limpiar los campos de entrada
             UserData = new UserData();
+            TarjetaData = new Tarjeta();
 
-            // Mostrar mensaje de guardado exitoso
+ 
             await Application.Current.MainPage.DisplayAlert("Datos Guardados", "Guardado exitosamente", "OK");
         }
 
@@ -79,10 +105,22 @@ namespace UIBlackjack.ViewModels
                 UserList.Add(user);
             }
 
-            // Asumiendo que deseas mostrar el primer usuario en la lista
+            var tarjetaList = await App.Database.GetTarjetaDataAsync();
+            TarjetaList.Clear();
+            foreach (var tarjeta in tarjetaList)
+            {
+                TarjetaList.Add(tarjeta);
+            }
+
+            // Asumiendo que deseas mostrar el primer usuario y tarjeta en la lista
             if (UserList.Count > 0)
             {
                 UserData = UserList[0];
+            }
+
+            if (TarjetaList.Count > 0)
+            {
+                TarjetaData = TarjetaList[0];
             }
         }
     }

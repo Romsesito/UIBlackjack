@@ -16,27 +16,7 @@
         <StackLayout VerticalOptions="Center" HorizontalOptions="Center" Spacing="20">
 
 
-            <Button Text="Mis Datos" 
-                    BackgroundColor="#240a0a" 
-                    TextColor="White" 
-                    FontAttributes="Bold"
-                    WidthRequest="200"
-                    HeightRequest="60"/>
-
-            <Button Text="Editar Datos" 
-                    BackgroundColor="#240a0a" 
-                    TextColor="White" 
-                    FontAttributes="Bold"
-                    WidthRequest="200"
-                    HeightRequest="60"/>
-
-
-            <Button Text="Eliminar Datos" 
-                    BackgroundColor="#240a0a" 
-                    TextColor="White" 
-                    FontAttributes="Bold"
-                    WidthRequest="200"
-                    HeightRequest="60"/>
+            <Image Source="seguridad.jpg"  WidthRequest="200"/>
 
             <Button Text="Volver" 
                     BackgroundColor="#240a0a" 

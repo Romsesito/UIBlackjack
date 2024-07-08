@@ -15,6 +15,8 @@ namespace UIBlackjack.ViewModels
         public ICommand NavigateToMenuCommand { get; }
         public ICommand NavigateToMisDatosCommand { get; }
         public ICommand NavigateToInfoCCommand { get; }
+        public ICommand NavigateToCrearTarjetaCommand { get; }
+        public ICommand NavigateToMiTarjeta { get; }
 
         public MenuViewModel()
         {
@@ -26,6 +28,8 @@ namespace UIBlackjack.ViewModels
             NavigateToMisDatosCommand = new Command(async () => await NavigateToPage("MisDatosInfo"));
             NavigateToMenuCommand = new Command(async () => await NavigateToPage("Menu"));
             NavigateToInfoCCommand = new Command(async () => await NavigateToPage("Info"));
+            NavigateToCrearTarjetaCommand = new Command(async () => await NavigateToPage("AgregarTarjeta"));
+            NavigateToMiTarjeta = new Command(async () => await NavigateToPage("MisTarjetas")); 
         }
 
         private async Task NavigateToPage(string pageName)
@@ -56,6 +60,12 @@ namespace UIBlackjack.ViewModels
                     break;
                 case "Info":
                     await navigation.PushAsync(new Views.Info());
+                    break;
+                case "AgregarTarjeta":
+                    await navigation.PushAsync(new Views.AgregarTarjeta());
+                    break;
+                case "MisTarjetas":
+                    await navigation.PushAsync(new Views.MisTarjetas());
                     break;
             }
         }

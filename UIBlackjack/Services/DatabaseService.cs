@@ -15,6 +15,7 @@ namespace UIBlackjack.Services
         {
             _database = new SQLiteAsyncConnection(dbPath);
             _database.CreateTableAsync<UserData>().Wait();
+            _database.CreateTableAsync<Tarjeta>().Wait();
         }
 
         public Task<List<UserData>> GetUserDataAsync()
@@ -37,6 +38,28 @@ namespace UIBlackjack.Services
         public Task<int> DeleteUserDataAsync(UserData userData)
         {
             return _database.DeleteAsync(userData);
+        }
+
+        public Task<List<Tarjeta>> GetTarjetaDataAsync()
+        {
+            return _database.Table<Tarjeta>().ToListAsync();
+        }
+
+        public Task<int> SaveTarjetaDataAsync(Tarjeta tarjetaData)
+        {
+            if (tarjetaData.Id != 0)
+            {
+                return _database.UpdateAsync(tarjetaData);
+            }
+            else
+            {
+                return _database.InsertAsync(tarjetaData);
+            }
+        }
+
+        public Task<int> DeleteTarjetaDataAsync(Tarjeta tarjetaData)
+        {
+            return _database.DeleteAsync(tarjetaData);
         }
     }
 }

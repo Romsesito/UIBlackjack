@@ -4,6 +4,12 @@
              xmlns:vm="clr-namespace:UIBlackjack.ViewModels"
              x:Class="UIBlackjack.Views.AgregarTarjeta"
              Title="Tarjeta">
+
+    <ContentPage.BindingContext>
+        <vm:InfoViewModel />
+    </ContentPage.BindingContext>
+    
+    
     <Grid>
         <Image Source="fondo3.png"
                Aspect="AspectFill"
@@ -15,11 +21,11 @@
             <Label AnchorY="1"/>
 
             <Label Text="Numero" TextColor="#f17070"/>
-            <Entry Placeholder="1234 5678 9102 3456" WidthRequest="300" BackgroundColor="#240a0a"/>
+            <Entry Placeholder="1234 5678 9102 3456" WidthRequest="300" BackgroundColor="#240a0a" Text="{Binding TarjetaData.NumTarjeta }"/>
             <Label Text="Fecha" TextColor="#f17070"/>
-            <Entry Placeholder="11/27" WidthRequest="300" BackgroundColor="#240a0a"/>
+            <Entry Placeholder="11/27" WidthRequest="300" BackgroundColor="#240a0a" Text="{Binding TarjetaData.FechaEXP }"/>
             <Label Text="Num. CVV" TextColor="#f17070"/>
-            <Entry Placeholder="210" WidthRequest="300" BackgroundColor="#240a0a"/>
+            <Entry Placeholder="210" WidthRequest="300" BackgroundColor="#240a0a" Text="{Binding TarjetaData.CVV }"/>
 
 
             <Button Text="Guardar" 
@@ -27,7 +33,9 @@
                     TextColor="White" 
                     FontAttributes="Bold"
                     WidthRequest="200"
-                    HeightRequest="60"/>
+                    HeightRequest="60"
+                    Command="{Binding SaveCommand}"/>
+                    
 
             <Button Text="Volver" 
                     BackgroundColor="#240a0a" 

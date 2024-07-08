@@ -6,7 +6,7 @@
              Title="Info">
 
     <ContentPage.BindingContext>
-        <vm:TarjetaViewModel />
+        <vm:MenuViewModel />
     </ContentPage.BindingContext>
     <Grid>
         <Image Source="fondo3.png"
@@ -17,19 +17,22 @@
         <StackLayout VerticalOptions="Center" HorizontalOptions="Center" Spacing="20">
 
 
-            <Button Text="Mis Tarjetas" 
+            <Button Text="Mi Tarjeta" 
                     BackgroundColor="#240a0a" 
                     TextColor="White" 
                     FontAttributes="Bold"
                     WidthRequest="200"
-                    HeightRequest="60"/>
+                    HeightRequest="60"
+                    Command="{Binding NavigateToMiTarjeta}"/>
 
             <Button Text="Añadir Tarjeta" 
                     BackgroundColor="#240a0a" 
                     TextColor="White" 
                     FontAttributes="Bold"
                     WidthRequest="200"
-                    HeightRequest="60"/>
+                    HeightRequest="60"
+                    Command="{Binding NavigateToCrearTarjetaCommand}"/>
+                    
 
 
             <Button Text="Eliminar Tarjeta" 
