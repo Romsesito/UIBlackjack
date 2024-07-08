@@ -18,11 +18,11 @@
             <Label AnchorY="1"/>
 
             <Label Text="Nombres" TextColor="#f17070"/>
-            <Entry Placeholder="Juan Carlos" WidthRequest="300" BackgroundColor="#240a0a"/>
+            <Entry Placeholder="Juan Carlos" WidthRequest="300" BackgroundColor="#240a0a" Text="{Binding UserData.Name}" />
             <Label Text="Apellidos" TextColor="#f17070"/>
-            <Entry Placeholder="Aguiar Mora" WidthRequest="300" BackgroundColor="#240a0a"/>
+            <Entry Placeholder="Aguiar Mora" WidthRequest="300" BackgroundColor="#240a0a" Text="{Binding UserData.LastName}"/>
             <Label Text="Num. Telefono" TextColor="#f17070"/>
-            <Entry Placeholder="098582129" WidthRequest="300" BackgroundColor="#240a0a"/>
+            <Entry Placeholder="098582129" WidthRequest="300" BackgroundColor="#240a0a" Text="{Binding UserData.fono}"/>
 
             <Button Text="Guardar" 
                     BackgroundColor="#240a0a" 
@@ -39,6 +39,7 @@
                     WidthRequest="200"
                     HeightRequest="60"
                     Command="{Binding NavigateToPageCommand}"/>
+          
         </StackLayout>
     </Grid>
 </ContentPage>
