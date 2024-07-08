@@ -1,5 +1,5 @@
-namespace UIBlackjack.Views;
 
+namespace UIBlackjack.Views;
 public partial class Ayuda : ContentPage
 {
 	public Ayuda()

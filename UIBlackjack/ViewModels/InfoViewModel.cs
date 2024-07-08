@@ -2,6 +2,7 @@
 using System.Windows.Input;
 using Microsoft.Maui.Controls;
 using UIBlackjack.Models;
+using System.Threading.Tasks;
 
 namespace UIBlackjack.ViewModels
 {
@@ -26,6 +27,9 @@ namespace UIBlackjack.ViewModels
         {
             NavigateToPageCommand = new Command(async () => await NavigateToPage("Menu"));
             SaveCommand = new Command(async () => await SaveData());
+
+            UserData = new UserData();
+            SaveCommand = new Command(async () => await SaveData());
         }
 
         private async Task NavigateToPage(string pagename)
@@ -41,7 +45,7 @@ namespace UIBlackjack.ViewModels
         private async Task SaveData()
         {
             // Aquí puedes agregar la lógica para guardar los datos
-
+            await App.Database.SaveUserDataAsync(UserData);
             // Mostrar mensaje de guardado exitoso
             await Application.Current.MainPage.DisplayAlert("Datos Guardados", "Guardado exitosamente", "OK");
         }
