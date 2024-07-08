@@ -1,8 +1,12 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:UIBlackjack.ViewModels"
              x:Class="UIBlackjack.Views.Info"
              Title="Info">
+    <ContentPage.BindingContext>
+        <vm:InfoViewModel />
+    </ContentPage.BindingContext>
     <Grid>
         <Image Source="fondo3.png"
                Aspect="AspectFill"
@@ -19,7 +23,6 @@
             <Entry Placeholder="Aguiar Mora" WidthRequest="300" BackgroundColor="#240a0a"/>
             <Label Text="Num. Telefono" TextColor="#f17070"/>
             <Entry Placeholder="098582129" WidthRequest="300" BackgroundColor="#240a0a"/>
-            
 
             <Button Text="Guardar" 
                     BackgroundColor="#240a0a" 
@@ -33,7 +36,8 @@
                     TextColor="White" 
                     FontAttributes="Bold"
                     WidthRequest="200"
-                    HeightRequest="60"/>
+                    HeightRequest="60"
+                    Command="{Binding NavigateToPageCommand}"/>
         </StackLayout>
     </Grid>
 </ContentPage>
