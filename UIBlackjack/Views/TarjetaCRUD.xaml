@@ -25,7 +25,7 @@
                     HeightRequest="60"
                     Command="{Binding NavigateToMiTarjeta}"/>
 
-            <Button Text="Añadir Tarjeta" 
+            <Button Text="Editar Tarjeta" 
                     BackgroundColor="#240a0a" 
                     TextColor="White" 
                     FontAttributes="Bold"
@@ -35,12 +35,7 @@
                     
 
 
-            <Button Text="Eliminar Tarjeta" 
-                    BackgroundColor="#240a0a" 
-                    TextColor="White" 
-                    FontAttributes="Bold"
-                    WidthRequest="200"
-                    HeightRequest="60"/>
+
 
             <Button Text="Volver" 
                     BackgroundColor="#240a0a" 
