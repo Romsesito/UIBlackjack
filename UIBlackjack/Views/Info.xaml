@@ -29,7 +29,8 @@
                     TextColor="White" 
                     FontAttributes="Bold"
                     WidthRequest="200"
-                    HeightRequest="60"/>
+                    HeightRequest="60"
+                    Command="{Binding SaveCommand}"/>
 
             <Button Text="Volver" 
                     BackgroundColor="#240a0a" 
