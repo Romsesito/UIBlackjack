@@ -1,8 +1,12 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:UIBlackjack.ViewModels"
              x:Class="UIBlackjack.Views.Menu"
              Title="Menu">
+    <ContentPage.BindingContext>
+        <vm:MenuViewModel />
+    </ContentPage.BindingContext>
     <Grid>
         <Image Source="fondo.png"
                Aspect="AspectFill"
@@ -22,16 +26,51 @@
                     <ColumnDefinition Width="Auto" />
                 </Grid.ColumnDefinitions>
                 <Label AnchorY="100"/>
-                <Button Text="Informacion" Grid.Row="0" Grid.Column="0" WidthRequest="150" HeightRequest="60" BackgroundColor="#240a0a" TextColor="White" FontAttributes="Bold" />
-                <Button Text="Seguridad" Grid.Row="0" Grid.Column="1" WidthRequest="150" HeightRequest="60" BackgroundColor="#240a0a" TextColor="White" FontAttributes="Bold"  />
-                <Button Text="Tarjeta" Grid.Row="2" Grid.Column="0" WidthRequest="150" HeightRequest="60" BackgroundColor="#240a0a" TextColor="White" FontAttributes="Bold" />
-                <Button Text="Ubicacion" Grid.Row="2" Grid.Column="1" WidthRequest="150" HeightRequest="60" BackgroundColor="#240a0a" TextColor="White" FontAttributes="Bold" />
+                <Button Text="Informacion" 
+                        Grid.Row="0" 
+                        Grid.Column="0" 
+                        WidthRequest="150" 
+                        HeightRequest="60" 
+                        BackgroundColor="#240a0a" 
+                        TextColor="White" 
+                        FontAttributes="Bold" 
+                        Command="{Binding NavigateToInfoCommand}" />
+                <Button Text="Seguridad" 
+                        Grid.Row="0" 
+                        Grid.Column="1" 
+                        WidthRequest="150" 
+                        HeightRequest="60" 
+                        BackgroundColor="#240a0a" 
+                        TextColor="White" 
+                        FontAttributes="Bold" 
+                        Command="{Binding NavigateToSeguridadCommand}" />
+                <Button Text="Tarjeta" 
+                        Grid.Row="2" 
+                        Grid.Column="0" 
+                        WidthRequest="150" 
+                        HeightRequest="60" 
+                        BackgroundColor="#240a0a" 
+                        TextColor="White" 
+                        FontAttributes="Bold" 
+                        Command="{Binding NavigateToTarjetaCommand}" />
+                <Button Text="Ubicacion" 
+                        Grid.Row="2" 
+                        Grid.Column="1" 
+                        WidthRequest="150" 
+                        HeightRequest="60" 
+                        BackgroundColor="#240a0a" 
+                        TextColor="White" 
+                        FontAttributes="Bold" 
+                        Command="{Binding NavigateToUbicacionCommand}" />
             </Grid>
             <Label AnchorY="1"/>
-            <Button Text="Ayuda" Grid.Row="1" Grid.Column="1" BackgroundColor="#240a0a" TextColor="White" FontAttributes="Bold"/>
- 
+            <Button Text="Ayuda" 
+                    Grid.Row="1" 
+                    Grid.Column="1" 
+                    BackgroundColor="#240a0a" 
+                    TextColor="White" 
+                    FontAttributes="Bold" 
+                    Command="{Binding NavigateToAyudaCommand}" />
         </StackLayout>
     </Grid>
 </ContentPage>
-    
-    
